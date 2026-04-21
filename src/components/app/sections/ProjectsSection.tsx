@@ -10,36 +10,44 @@ const projects = [
     tags: ["< Next.js />", "< Stripe />"],
     image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80",
     colSpan: "md:col-span-8",
-    description: "A high-performance headless e-commerce solution built for scale. Features real-time inventory syncing and seamless checkout."
+    description: "A high-performance headless e-commerce solution built for scale. Features real-time inventory syncing and seamless checkout.",
+    href: "/projects/e-commerce-reimagined",
   },
   {
     title: "Fintech Dashboard",
     tags: ["< React />", "< D3.js />"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     colSpan: "md:col-span-4",
-    description: "Data-dense financial analytics dashboard. Complex data visualization with D3.js and real-time WebSocket feeds."
+    description: "Data-dense financial analytics dashboard. Complex data visualization with D3.js and real-time WebSocket feeds.",
+    href: "/projects/fintech-dashboard",
   },
   {
     title: "Web3 NFT Platform",
     tags: ["< WebGL />", "< Three.js />"],
     image: "https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?auto=format&fit=crop&w=800&q=80",
     colSpan: "md:col-span-4",
-    description: "Immersive 3D gallery for digital assets. Custom shaders and WebGL rendering for a premium browsing experience."
+    description: "Immersive 3D gallery for digital assets. Custom shaders and WebGL rendering for a premium browsing experience.",
+    href: "/projects/web3-nft-platform",
   },
   {
     title: "Creative Agency",
     tags: ["< GSAP />", "< Tailwind />"],
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80",
     colSpan: "md:col-span-8",
-    description: "Award-winning portfolio site with scroll-jacking, custom cursors, and complex GSAP timeline animations."
+    description: "Award-winning portfolio site with scroll-jacking, custom cursors, and complex GSAP timeline animations.",
+    href: "/projects/creative-agency",
   }
 ];
 
 const ProjectCard = React.memo(({ project, index }: { project: typeof projects[0]; index: number }) => {
   return (
-    <div 
-      className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] shrink-0 border border-text-muted/20 bg-bg-dark group overflow-hidden"
+    <a
+      href={project.href || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] shrink-0 border border-text-muted/20 bg-bg-dark group overflow-hidden block"
       data-cursor="VIEW DETAIL"
+      aria-label={`View case study: ${project.title}`}
     >
       <div className="absolute inset-0 bg-black z-0 overflow-hidden">
         <img 
@@ -86,7 +94,7 @@ const ProjectCard = React.memo(({ project, index }: { project: typeof projects[0
           </div>
         </div>
       </div>
-    </div>
+      </a>
   );
 });
 

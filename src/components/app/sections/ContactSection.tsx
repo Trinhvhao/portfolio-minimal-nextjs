@@ -113,19 +113,28 @@ export const ContactSection = React.memo(function ContactSection() {
             <h4 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-6">Socials</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/trinhvanhao"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
                 className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-text-muted/30 flex items-center justify-center hover:bg-white hover:text-black transition-all text-text-light"
               >
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/Trinhvhao"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
                 className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-text-muted/30 flex items-center justify-center hover:bg-white hover:text-black transition-all text-text-light"
               >
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@hayyie"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok Profile"
                 className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-text-muted/30 flex items-center justify-center hover:bg-white hover:text-black transition-all text-text-light"
               >
                 <GlobeIcon className="w-5 h-5" />

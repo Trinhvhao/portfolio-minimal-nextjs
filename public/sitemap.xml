@@ -1,51 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Main Portfolio Page -->
   <url>
     <loc>https://www.hayyie.click/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.hayyie.click/images/og-cover-1200x630.jpg</image:loc>
-      <image:title>Trinh Van Hao - Full Stack Developer</image:title>
+      <image:title>Trịnh Văn Hào – Full Stack Developer | React, Next.js &amp; AI (Vietnam)</image:title>
     </image:image>
   </url>
-  
-  <!-- Section anchors for better indexing -->
+
+  <!-- About Page -->
   <url>
-    <loc>https://www.hayyie.click/#about</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.hayyie.click/about</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- Projects Index -->
   <url>
-    <loc>https://www.hayyie.click/#projects</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.hayyie.click/projects</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
+  <!-- Project Case Studies -->
   <url>
-    <loc>https://www.hayyie.click/#experience</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.hayyie.click/projects/e-commerce-reimagined</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>E-Commerce Reimagined – Next.js &amp; Stripe Headless Solution</image:title>
+    </image:image>
   </url>
-  
   <url>
-    <loc>https://www.hayyie.click/#skills</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.hayyie.click/projects/fintech-dashboard</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Fintech Dashboard – React &amp; D3.js Analytics Platform</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hayyie.click/projects/web3-nft-platform</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Web3 NFT Platform – Three.js &amp; WebGL 3D Gallery</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hayyie.click/projects/creative-agency</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Creative Agency Portfolio – GSAP &amp; Tailwind Animation Site</image:title>
+    </image:image>
+  </url>
+
+  <!-- Experience Page -->
+  <url>
+    <loc>https://www.hayyie.click/experience</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
+  <!-- Contact Page -->
   <url>
-    <loc>https://www.hayyie.click/#contact</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.hayyie.click/contact</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

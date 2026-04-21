@@ -12,7 +12,7 @@ const archiveData: ArchiveItem[] = [
     title: "Nexus Design System",
     role: "Architecture",
     tech: "React, Storybook",
-    link: "github.com",
+    link: "https://github.com/Trinhvhao/nexus-design-system",
     image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=400&q=80",
   },
   {
@@ -20,7 +20,7 @@ const archiveData: ArchiveItem[] = [
     title: "Aura WebGL Experience",
     role: "Creative Dev",
     tech: "Three.js, GLSL",
-    link: "live site",
+    link: "https://www.hayyie.click/projects/web3-nft-platform",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80",
   },
   {
@@ -28,7 +28,7 @@ const archiveData: ArchiveItem[] = [
     title: "Fintech Mobile App",
     role: "Frontend",
     tech: "React Native",
-    link: "app store",
+    link: "https://www.hayyie.click/projects/fintech-dashboard",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80",
   },
   {
@@ -36,7 +36,7 @@ const archiveData: ArchiveItem[] = [
     title: "E-Commerce Headless",
     role: "Fullstack",
     tech: "Next.js, Shopify",
-    link: "live site",
+    link: "https://www.hayyie.click/projects/e-commerce-reimagined",
     image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=400&q=80",
   },
   {
@@ -44,7 +44,7 @@ const archiveData: ArchiveItem[] = [
     title: "Onyx Dark Theme",
     role: "Design",
     tech: "Figma, CSS",
-    link: "figma.com",
+    link: "https://www.figma.com",
     image: "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&w=400&q=80",
   },
   {
@@ -52,7 +52,7 @@ const archiveData: ArchiveItem[] = [
     title: "Legacy Dashboard",
     role: "Frontend",
     tech: "Vue.js, Vuex",
-    link: "offline",
+    link: "https://www.hayyie.click/experience",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
   },
 ];
@@ -114,8 +114,8 @@ export const ArchiveSection = React.memo(function ArchiveSection() {
                 <td className="py-6 px-4 font-sans text-sm text-text-muted group-hover:text-black/80 transition-colors">{item.role}</td>
                 <td className="py-6 px-4 font-mono text-xs text-text-muted group-hover:text-black/80 transition-colors">{item.tech}</td>
                 <td className="py-6 px-4 text-right font-mono text-sm">
-                  <a href="#" className="inline-flex items-center gap-2 hover:underline underline-offset-4">
-                    {item.link} <ArrowRight className="w-4 h-4" />
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline underline-offset-4">
+                    {item.link.includes('hayyie') ? 'live site' : new URL(item.link).hostname.replace('www.', '')} <ArrowRight className="w-4 h-4" />
                   </a>
                 </td>
               </motion.tr>

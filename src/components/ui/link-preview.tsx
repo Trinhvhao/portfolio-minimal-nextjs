@@ -18,11 +18,11 @@ type LinkPreviewProps = {
   quality?: number;
   layout?: string;
 } & (
-  | { isStatic: true; imageSrc: string }
-  | { isStatic?: false; imageSrc?: never }
-);
+    | { isStatic: true; imageSrc: string }
+    | { isStatic?: false; imageSrc?: never }
+  );
 
-export function LinkPreview({
+export const LinkPreview = ({
   children,
   url,
   className,
@@ -32,7 +32,7 @@ export function LinkPreview({
   layout = "fixed",
   isStatic = false,
   imageSrc = "",
-}: LinkPreviewProps) {
+}: LinkPreviewProps) => {
   let src;
   if (!isStatic) {
     const params = encode({
@@ -62,9 +62,8 @@ export function LinkPreview({
   const x = useMotionValue(0);
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: React.MouseEvent) => {
-    const target = event.target as HTMLElement;
-    const targetRect = target.getBoundingClientRect();
+  const handleMouseMove = (event: any) => {
+    const targetRect = event.target.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2;
     x.set(offsetFromCenter);
@@ -146,4 +145,4 @@ export function LinkPreview({
       </HoverCardPrimitive.Root>
     </>
   );
-}
+};

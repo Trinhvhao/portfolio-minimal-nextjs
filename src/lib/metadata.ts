@@ -17,17 +17,17 @@ export interface MetadataConfig {
 
 const SITE_URL = "https://www.hayyie.click";
 
-// Default metadata
+// SEO-optimized metadata
 export const defaultMetadata: MetadataConfig = {
-    title: "Trịnh Văn Hào – Full Stack Developer | Code, Product Thinking & AI",
-    description: "Kết hợp tư duy sản phẩm, sáng tạo và AI để xây dựng trải nghiệm web độc đáo. Portfolio của Trịnh Văn Hào - Full Stack Developer.",
-    keywords: "Trịnh Văn Hào, Trinh Van Hao, Hao Trinh, Full Stack Developer, Frontend Developer, React Developer, TypeScript, Next.js, Portfolio, Web Development, UI/UX, Motion Design, GSAP, Three.js, Vietnam Developer, Vietnamese Developer, Product Thinking, AI, Creative Development, Tư duy sản phẩm",
+    title: "Trịnh Văn Hào – Full Stack Developer | React, Next.js & AI (Vietnam)",
+    description: "Full Stack Developer portfolio by Trịnh Văn Hào. Building React, Next.js, and AI-powered web experiences with a product-first mindset. Vietnam-based, available globally for remote work.",
+    keywords: "Trịnh Văn Hào, Trinh Van Hao, Full Stack Developer, Frontend Developer, React Developer, Next.js Developer, TypeScript, Portfolio, Web Development, AI Developer, Remote Developer, Freelance Developer, Vietnam Developer, React, Node.js, WebGL, Three.js, Tailwind CSS, Product Thinking, Creative Development, RAG, NLP",
     fbAppId: "2714831052216688",
-    ogTitle: "Trịnh Văn Hào – Full Stack Developer | Code, Product Thinking & AI",
-    ogDescription: "Kết hợp tư duy sản phẩm, sáng tạo và AI để xây dựng trải nghiệm web độc đáo. Portfolio của Trịnh Văn Hào - Full Stack Developer.",
+    ogTitle: "Trịnh Văn Hào – Full Stack Developer | React, Next.js & AI (Vietnam)",
+    ogDescription: "Full Stack Developer portfolio by Trịnh Văn Hào. Building React, Next.js, and AI-powered web experiences with a product-first mindset. Vietnam-based, available globally for remote work.",
     ogImage: `${SITE_URL}/images/og-cover-1200x630.jpg`,
-    twitterTitle: "Trịnh Văn Hào – Full Stack Developer | Code, Product Thinking & AI",
-    twitterDescription: "Kết hợp tư duy sản phẩm, sáng tạo và AI để xây dựng trải nghiệm web độc đáo. Portfolio của Trịnh Văn Hào - Full Stack Developer.",
+    twitterTitle: "Trịnh Văn Hào – Full Stack Developer | React, Next.js & AI (Vietnam)",
+    twitterDescription: "Full Stack Developer portfolio by Trịnh Văn Hào. Building React, Next.js, and AI-powered web experiences with a product-first mindset. Vietnam-based, available globally for remote work.",
     twitterImage: `${SITE_URL}/images/og-cover-1200x630.jpg`,
     twitterCard: "summary_large_image",
     canonical: `${SITE_URL}/`

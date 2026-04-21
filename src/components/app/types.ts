@@ -5,6 +5,7 @@ export type Project = {
   tags: string[];
   image: string;
   colSpan: string;
+  href?: string;
 };
 
 export type Capability = {

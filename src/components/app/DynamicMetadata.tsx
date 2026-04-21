@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import { updateMetadata, defaultMetadata, getSectionMetadata } from '@/lib/metadata';
 
 export function DynamicMetadata() {
     useEffect(() => {
-        updateMetadata(defaultMetadata);
-
         const sections = [
             { id: 'hero', selector: '[data-section="hero"]' },
             { id: 'about', selector: '[data-section="about"]' },
@@ -26,14 +23,13 @@ export function DynamicMetadata() {
                 (entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
+                            // Only update URL hash for shareability — DO NOT modify document.title
+                            // Googlebot captures title at crawl time; dynamic title changes are unreliable
                             if (id !== 'hero') {
                                 window.history.replaceState(null, '', `#${id}`);
                             } else {
                                 window.history.replaceState(null, '', window.location.pathname);
                             }
-
-                            const metadata = getSectionMetadata(id);
-                            updateMetadata(metadata);
                         }
                     });
                 },

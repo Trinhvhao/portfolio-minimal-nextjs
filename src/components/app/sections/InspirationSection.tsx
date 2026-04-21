@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { TextReveal } from "@/components/app/TextReveal";
 
 export const InspirationSection = React.memo(function InspirationSection() {
@@ -17,14 +18,12 @@ export const InspirationSection = React.memo(function InspirationSection() {
           transition={{ duration: 0.6 }}
         >
           I draw heavy inspiration from platforms like{" "}
-          <a
-            href="https://awwwards.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url="https://awwwards.com"
             className="font-bold text-white border-b-2 border-white/30 hover:border-white transition-colors"
           >
             Awwwards
-          </a>{" "}
+          </LinkPreview>{" "}
           and modern brutalist design trends.
         </motion.p>
         <motion.p
@@ -34,23 +33,24 @@ export const InspirationSection = React.memo(function InspirationSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           When I&apos;m not coding, I&apos;m usually exploring{" "}
-          <a
-            href="https://unsplash.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url="https://unsplash.com"
+            isStatic
+            imageSrc="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=640&q=50"
             className="font-bold text-white border-b-2 border-white/30 hover:border-white transition-colors"
           >
             photography
-          </a>{" "}
+          </LinkPreview>{" "}
           or studying{" "}
-          <a
-            href="https://fonts.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url="https://fonts.google.com"
+            isStatic
+            imageSrc="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=640&q=50"
             className="font-bold text-white border-b-2 border-white/30 hover:border-white transition-colors"
           >
             typography
-          </a>.
+          </LinkPreview>
+          .
         </motion.p>
       </div>
     </section>
