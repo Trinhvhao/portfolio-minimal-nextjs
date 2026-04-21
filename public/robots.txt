@@ -1,14 +1,18 @@
-# robots.txt for Trinh Van Hao Portfolio
+# Trinh Van Hao Portfolio — robots.txt
+# Sitemap MUST be the first directive
+Sitemap: https://www.hayyie.click/sitemap.xml
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Block API routes and JSON files
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow Facebook/Meta crawlers for OG sharing
 User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Facebot
 Allow: /
-
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /*.json$
-
-# Sitemap location
-Sitemap: https://www.hayyie.click/sitemap.xml

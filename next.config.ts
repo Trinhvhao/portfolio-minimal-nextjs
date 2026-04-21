@@ -25,6 +25,24 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  // Permanent 301 redirects — non-www → www
+  // This fixes the Vercel default 307 redirect issue
+  async redirects() {
+    return [
+      {
+        source: "/(.*)",
+        has: [
+          {
+            type: "host",
+            value: "hayyie.click",
+          },
+        ],
+        destination: "https://www.hayyie.click/:1",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

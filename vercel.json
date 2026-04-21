@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "hayyie.click"
+        }
+      ],
+      "destination": "https://www.hayyie.click/:1",
+      "permanent": true
+    }
+  ]
+}
