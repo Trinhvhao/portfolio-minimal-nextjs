@@ -131,7 +131,7 @@ export default function ContactPage() {
                 {[
                   { name: "GitHub", url: "https://github.com/Trinhvhao" },
                   { name: "LinkedIn", url: "https://www.linkedin.com/in/trinhvanhao" },
-                  { name: "TikTok", url: "https://www.tiktok.com/@hayyie" },
+                  { name: "TikTok", url: "https://www.tiktok.com/@itlamcontent.th" },
                 ].map((link) => (
                   <a
                     key={link.name}

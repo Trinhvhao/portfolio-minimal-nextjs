@@ -11,7 +11,7 @@ export const InspirationSection = React.memo(function InspirationSection() {
       <TextReveal text="INSPIRATION" className="text-5xl md:text-7xl font-heading font-bold mb-8 md:mb-12 tracking-tighter" />
 
       <div className="flex flex-col gap-12 text-2xl md:text-4xl text-text-muted max-w-4xl font-sans leading-relaxed">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -25,8 +25,8 @@ export const InspirationSection = React.memo(function InspirationSection() {
             Awwwards
           </LinkPreview>{" "}
           and modern brutalist design trends.
-        </motion.p>
-        <motion.p
+        </motion.div>
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -51,7 +51,7 @@ export const InspirationSection = React.memo(function InspirationSection() {
             typography
           </LinkPreview>
           .
-        </motion.p>
+        </motion.div>
       </div>
     </section>
   );

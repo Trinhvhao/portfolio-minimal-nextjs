@@ -35,7 +35,7 @@ const ZaloIcon = ({ className }: { className?: string }) => (
 );
 
 const platforms = [
-  { name: "TikTok", count: "3.6K", color: "hover:text-[#00F2FE]", border: "group-hover:border-[#00F2FE]/50", icon: TikTokIcon, link: "https://www.tiktok.com/@hayyie" },
+  { name: "TikTok", count: "3.6K", color: "hover:text-[#00F2FE]", border: "group-hover:border-[#00F2FE]/50", icon: TikTokIcon, link: "https://www.tiktok.com/@itlamcontent.th" },
   { name: "Facebook", count: "2.2K", color: "hover:text-[#1877F2]", border: "group-hover:border-[#1877F2]/50", icon: FacebookIcon, link: "https://www.facebook.com/trinhvanhao" },
   { name: "Instagram", count: "350", color: "hover:text-[#E4405F]", border: "group-hover:border-[#E4405F]/50", icon: InstagramIcon, link: "https://www.instagram.com/hayyie" },
   { name: "Zalo", count: "151", color: "hover:text-[#0068FF]", border: "group-hover:border-[#0068FF]/50", icon: ZaloIcon, link: "https://zalo.me" },
