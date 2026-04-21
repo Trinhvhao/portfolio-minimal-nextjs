@@ -76,18 +76,19 @@
   }
 }
 
+html {
+  overflow-x: clip !important;
+  /* Lenis handles smooth scrolling — do not set scroll-behavior here */
+}
+
 body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-light);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  overflow-x: hidden;
-  /* Lenis handles smooth scrolling — do not set scroll-behavior here */
 }
 
 @media (prefers-reduced-motion: reduce) {
