@@ -1,0 +1,280 @@
+"use client";
+
+import { useEffect, useState, type ReactNode } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import Lenis from "lenis";
+import { AboutSection } from "@/components/app/sections/AboutSection";
+import { ArchiveSection } from "@/components/app/sections/ArchiveSection";
+import { AiFutureSection } from "@/components/app/sections/AiFutureSection";
+import { CapabilitiesSection } from "@/components/app/sections/CapabilitiesSection";
+import { CertificationShowcaseSection } from "@/components/app/sections/CertificationShowcaseSection";
+import { ContactSection } from "@/components/app/sections/ContactSection";
+import { DigitalPresenceSection } from "@/components/app/sections/DigitalPresenceSection";
+import { ExperienceSection } from "@/components/app/sections/ExperienceSection";
+import { FloatingDock } from "@/components/app/FloatingDock";
+import { FilmGrain } from "@/components/ui/film-grain";
+import { HeroSection } from "@/components/app/sections/HeroSection";
+import { InspirationSection } from "@/components/app/sections/InspirationSection";
+import { OpenSourceSection } from "@/components/app/sections/OpenSourceSection";
+import { MarqueeBannerSection } from "@/components/app/sections/MarqueeBannerSection";
+import { ProcessSection } from "@/components/app/sections/ProcessSection";
+import { FloatingVibeStation } from "@/components/app/FloatingVibeStation";
+import { ResumeSection } from "@/components/app/ResumeSection";
+import { DynamicMetadata } from "@/components/app/DynamicMetadata";
+import { ProjectsSection } from "@/components/app/sections/ProjectsSection";
+import { TechArsenalSection } from "@/components/app/sections/TechArsenalSection";
+import { TimelineSkillsSection } from "@/components/app/sections/TimelineSkillsSection";
+import { TestimonialsSection } from "@/components/app/sections/TestimonialsSection";
+import { FileText } from "lucide-react";
+
+type SectionRevealConfig = {
+  initial: Record<string, number | string>;
+  whileInView: Record<string, number | string>;
+  transition: {
+    duration: number;
+    ease: [number, number, number, number];
+    delay?: number;
+  };
+  viewport?: {
+    once: boolean;
+    margin: string;
+  };
+};
+
+const REVEAL_PRESETS: SectionRevealConfig[] = [
+  {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+  {
+    initial: { opacity: 0, x: -48 },
+    whileInView: { opacity: 1, x: 0 },
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+  },
+  {
+    initial: { opacity: 0, x: 48 },
+    whileInView: { opacity: 1, x: 0 },
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+  },
+  {
+    initial: { opacity: 0, scale: 0.96, y: 24 },
+    whileInView: { opacity: 1, scale: 1, y: 0 },
+    transition: { duration: 0.8, ease: [0.2, 0.65, 0.3, 1] },
+  },
+  {
+    initial: { opacity: 0, rotateX: -8, y: 28 },
+    whileInView: { opacity: 1, rotateX: 0, y: 0 },
+    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+  },
+  {
+    initial: { opacity: 0, filter: "blur(8px)", y: 20 },
+    whileInView: { opacity: 1, filter: "blur(0px)", y: 0 },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+];
+
+function SectionReveal({ index, children }: { index: number; children: ReactNode }) {
+  const config = REVEAL_PRESETS[index % REVEAL_PRESETS.length];
+
+  return (
+    <motion.div
+      className="section-compact-block"
+      initial={config.initial}
+      whileInView={config.whileInView}
+      viewport={config.viewport ?? { once: true, margin: "-110px" }}
+      transition={config.transition}
+      style={{ perspective: 1000 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    return () => {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "auto";
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      touchMultiplier: 1.2,
+      prevent: (node) => node instanceof HTMLElement && node.closest('[data-modal-scroll="true"]') !== null,
+    });
+
+    const handleCustomScroll = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      lenis.scrollTo(customEvent.detail.target, { offset: -88 });
+    };
+    window.addEventListener('custom-scroll', handleCustomScroll as EventListener);
+
+    let rafId = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('custom-scroll', handleCustomScroll as EventListener);
+      lenis.destroy();
+    };
+  }, []);
+
+  return (
+    <div className="relative min-h-screen bg-bg-dark text-text-light selection:bg-white selection:text-black">
+      <DynamicMetadata />
+      <FilmGrain />
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-bg-dark flex flex-col items-center justify-center font-mono text-text-muted text-sm md:text-base"
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <div className="flex flex-col items-start gap-2">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+                &gt; SYSTEM BOOT...
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+                &gt; LOADING ASSETS...
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}>
+                &gt; INITIALIZING WORKSPACE...
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.0 }} className="text-white">
+                &gt; READY.
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="hidden">
+        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" decoding="async" />
+      </div>
+
+      <div data-section="hero">
+        <HeroSection />
+      </div>
+      <div className="section-compact-flow">
+        {/* Hook & Value (Positioning & Core Proof) */}
+        <div className="section-band section-band--a section-stack">
+          <SectionReveal index={0}>
+            <div data-section="about">
+              <AboutSection />
+            </div>
+          </SectionReveal>
+          <SectionReveal index={1}>
+            <DigitalPresenceSection />
+          </SectionReveal>
+          <SectionReveal index={2}>
+            <CapabilitiesSection />
+          </SectionReveal>
+          <SectionReveal index={3}>
+            <div data-section="projects">
+              <ProjectsSection />
+            </div>
+          </SectionReveal>
+        </div>
+
+        {/* Experience & Skills (Deep Professional Proof) */}
+        <div className="section-band section-band--b section-stack">
+          <SectionReveal index={4}>
+            <div data-section="experience">
+              <ExperienceSection />
+            </div>
+          </SectionReveal>
+          <SectionReveal index={5}>
+            <div data-section="skills">
+              <TimelineSkillsSection />
+            </div>
+          </SectionReveal>
+          <SectionReveal index={6}>
+            <TechArsenalSection />
+          </SectionReveal>
+          <SectionReveal index={7}>
+            <ArchiveSection />
+          </SectionReveal>
+          <SectionReveal index={8}>
+            <MarqueeBannerSection />
+          </SectionReveal>
+        </div>
+
+        {/* Vision & Methodology (Philosophy & Process) */}
+        <div className="section-band section-band--c section-stack">
+          <SectionReveal index={9}>
+            <ProcessSection />
+          </SectionReveal>
+          <SectionReveal index={10}>
+            <AiFutureSection />
+          </SectionReveal>
+          <SectionReveal index={11}>
+            <InspirationSection />
+          </SectionReveal>
+          <SectionReveal index={12}>
+            <OpenSourceSection />
+          </SectionReveal>
+        </div>
+
+        {/* Credibility & Conversion (Trust & CTA) */}
+        <div className="section-band section-band--a section-stack">
+          <SectionReveal index={13}>
+            <TestimonialsSection />
+          </SectionReveal>
+          <SectionReveal index={14}>
+            <CertificationShowcaseSection />
+          </SectionReveal>
+          <SectionReveal index={15}>
+            <div data-section="contact">
+              <ContactSection />
+            </div>
+          </SectionReveal>
+        </div>
+      </div>
+      <FloatingVibeStation />
+      <FloatingDock />
+      <ResumeSection />
+
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent('open-resume'))}
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[60] flex items-center gap-2 px-4 py-3 bg-white text-black rounded-full font-mono text-sm font-bold shadow-2xl hover:scale-105 transition-transform"
+      >
+        <FileText className="w-4 h-4" />
+        <span className="hidden md:inline">VIEW RESUME</span>
+        <span className="inline md:hidden">RESUME</span>
+      </button>
+    </div>
+  );
+}
